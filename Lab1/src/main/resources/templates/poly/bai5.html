@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+	<form action="/bai52/MathHCNcach2" method="RequestMethod.POST)">
+		<label>Chiều dài:</label>
+		<input type="number" name="chieuDai">
+		<label>Chiều rộng:</label>
+		<input type="number" name="chieuRong">
+		<button type="submit" class="btn btn-success">Tính</button>
+	</form>
+		
+		<p>Diện tích: <span th:text="${dienTich}"></span></p>
+		<p>Chu vi: <span th:text="${chuVi}"></span></p>
+
+</body>
+
+</html>
