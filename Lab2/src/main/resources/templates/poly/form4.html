@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bai4 - Lab2</title>
+</head>
+<body>
+    <form action="/bai4/save" method="post">
+        <input name="name" placeholder="Name">
+        <input name="price" placeholder="Price" type="number" step="0.01">
+        <button>Save</button>
+    </form>
+
+    <ul>
+        <li>Name: <span th:text="${product1.name}">?1name</span></li>
+        <li>Price: <span th:text="${product1.price}">?1price</span>$$$</li>
+    </ul>
+
+    <div th:if="${product2 != null}">
+        <ul>
+            <li>Name: <span th:text="${product2.name}">?2name</span></li> 
+            <li>Price: <span th:text="${product2.price}">?2price</span>$$$</li> 
+        </ul>
+    </div>
+
+    <hr>
+    <h3>Danh sách sản phẩm</h3>
+    <ul>
+        <th:block th:each="item : ${items}">
+            <li>
+                Name: <span th:text="${item.name}"></span> - Price: <span th:text="${item.price}"></span>$$$
+            </li>
+        </th:block>
+    </ul>
+</body>
+</html>
